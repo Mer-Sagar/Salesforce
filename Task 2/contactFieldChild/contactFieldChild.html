@@ -1,0 +1,54 @@
+<template>
+    <div style="background: #fff;">
+        <!-- <lightning-card variant="Narrow"  title="look-up field" icon-name="action:view_relationship"> -->
+            <!-- <h3 style="margin-left: 20px;"> -->
+                
+                <table if:true={recordData} style=" background-color: aliceblue;" >
+                    <!-- <thead>                      
+                        <tr>                           
+                            <th> Field Name </th>
+                            <th> Data Type</th>
+                            <th> SObject </th>
+                            <th> Action </th> 
+                        </tr>
+                       
+                    </thead> -->
+
+                    <tbody>
+
+                        <template  for:each={recordData} for:item="record">
+                            <tr key={record.cont_id}>
+                                <td>{record.cont_field}</td>
+                                <td>{record.field_type}</td>
+                                <td>{record.s_object}</td>
+                                <!-- <td><input type="hidden" value={row.counter}></td> -->
+                                <!-- <td><lightning-button variant="brand" label="+" onclick={clickToShow} value={row.cont_id} data-sobject={row.s_object}></lightning-button> </td> -->
+                                
+                            </tr>                           
+                            <!-- <tr key={row.cont_id} >
+                           
+                                <td colspan="4"><c-contact-field-child childvalue={selectedRec} data-id={row.cont_id} ></c-contact-field-child>  </td>
+                        
+                            </tr> -->
+
+                           
+                        </template>
+
+                    </tbody>
+                </table>
+                <!-- <template for:each={recordData} for:item="record">
+                   
+                   {record} -->
+                    
+                    <!-- <lightning-button  key={record} style="margin-left: 20px;" variant="brand" label="+" onclick={submitRecord}></lightning-button>  -->
+                    
+                <!-- </template> -->
+
+               
+    
+                
+            <!-- </h3> -->
+        <!-- </lightning-card> -->
+    </div>
+   
+</template>

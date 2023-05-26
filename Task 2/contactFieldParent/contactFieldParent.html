@@ -1,0 +1,69 @@
+<template>
+    <div style="background: #fff;">
+
+        <lightning-card if:true={loaded} variant="Narrow"  title="Parent Field" icon-name="action:freeze_user">
+            <h3 style="margin-left: 20px;" >Body Parent
+
+                <table style="margin: 20px; ">
+                    <thead>                      
+                        <tr>                           
+                            <th> Field Name </th>
+                            <th> Data Type</th>
+                            <th> SObject </th>
+                            <th> Action </th> 
+                        </tr>
+                       
+                    </thead>
+
+                    <tbody>
+
+                        <template for:each={data} for:item="row">
+                            <tr key={row.cont_id}>
+                                <td>{row.cont_field}</td>
+                                <td>{row.field_type}</td>
+                                <td>{row.s_object}</td>
+                                <!-- <td><input type="hidden" value={row.counter}></td> -->
+                                <td><lightning-input  type="checkbox" onchange={clickToShow} data-id="false" value={row.cont_id} data-sobject={row.s_object}></lightning-input> </td>
+                                
+                            </tr>   
+                            <template if:true={selectedRec} >
+                            <tr key={row.cont_id} >
+                           
+                                <td colspan="3" ><c-contact-field-child  data-id={row.cont_id} childvalue={selectedRec} ></c-contact-field-child>  </td>
+                        
+                            </tr>
+                            </template>
+                            <template if:true={error} >
+                                <tr key={row.cont_id} >
+                               
+                                    <td colspan="3" >{error} </td>
+                            
+                                </tr>
+                            </template>
+
+                           
+                        </template>
+
+                    </tbody>
+                </table>
+           
+            </h3>
+        </lightning-card> 
+       
+
+        <!-- Check box Lodding Task -->
+        <template if:false={loaded}>
+            <lightning-spinner variant="brand" alternative-text="Loading"></lightning-spinner>
+        </template>   
+
+        <!-- Checkbox Lodding Task -->
+        <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" >
+                </lightning-spinner>
+        </template>
+        
+
+
+    </div>
+    
+</template>

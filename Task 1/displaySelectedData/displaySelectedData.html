@@ -1,0 +1,29 @@
+<!-- =================: Parent -=->  reletedObjectList  :===================== -->
+<template>
+    
+    <template if:true={recordData} >
+        <div style="background:#fff;" >
+            <!-- <lightning-vertical-navigation selected-item="recent"  > -->
+                <lightning-vertical-navigation-section label="Selected Field">
+                    
+                    
+                    <!-- <lightning-vertical-navigation-item-badge label="Recent" name="recent" badge-count="3"></lightning-vertical-navigation-item-badge> -->
+                    
+                    <template for:each={recordData} for:item="record">
+                        
+                        <lightning-vertical-navigation-item-icon icon-name="action:new_task"  key={record} label={record}> 
+                            
+                        </lightning-vertical-navigation-item-icon>
+                        
+                        
+                    </template>
+                    
+                    
+                
+                </lightning-vertical-navigation-section>
+            <!-- </lightning-vertical-navigation> -->
+        </div>
+    </template>
+
+
+</template>

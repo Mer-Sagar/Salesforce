@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+   <masterLabel>selecteddataMessageChannel</masterLabel>
+   <isExposed>True</isExposed>
+   <description>This Lightning Message Channel sends information from VF to LWC</description>
+
+<lightningMessageFields>
+    <fieldName>fieldName</fieldName>
+    <description>This is the Selected Field Name</description>
+</lightningMessageFields>
+
+
+<lightningMessageFields>
+    <fieldName>recordData</fieldName>
+    <description>This is the record Data that changed</description>
+</lightningMessageFields>
+
+
+
+
+</LightningMessageChannel>
